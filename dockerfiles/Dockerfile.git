@@ -35,7 +35,7 @@ RUN addgroup \
     --ingroup "$GROUPNAME" \
     --uid "$UID" \
     $USER \
-&&  echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
+&&  echo "%"$USER" ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
 &&  mkdir /pwmangband \
 &&  chown -R 1000:1000 /pwmangband /install \
 &&  find /install -name "*.txt" -exec dos2unix '{}' \; \
